@@ -15,11 +15,13 @@ const nav = document.querySelector(".nav"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll(".section"),
     totalSection = allSection.length;
+    backdrop = document.querySelector(".backdrop")
 
     for(let i = 0;i<totalNavList;i++){
         const a = navList[i].querySelector("a")
         a.addEventListener("click", function (){
             removeBackSection();
+            hideBackdrop();
             for(let i=0;i<totalNavList;i++){
                 if(navList[i].querySelector("a").classList.contains("active")){
                     addBackSection(i);
@@ -33,6 +35,10 @@ const nav = document.querySelector(".nav"),
             }
         })
     }
+
+function hideBackdrop(){
+    backdrop.classList.add("hidden")
+}
 
 function addBackSection(num){
     allSection[num].classList.add("back-section");
