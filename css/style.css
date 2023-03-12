@@ -71,6 +71,8 @@ ul {
     z-index: 2;
     overflow-y: auto;
     overflow-x: hidden;
+    width: 100%;
+    left: 0;
 }
 
 .section {
